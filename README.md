@@ -5,13 +5,21 @@
  - MySQL/MariaDB
  - Composer
 
- ## Telepítés
-  - composer install 
-  - npm install
-  - npm run dev
+  ## Konfiguráció
+
+   1. `.env fájl létrehozása a .env.example alapján`
+   2. `.env fájlban adatbázis beállítások megadása`
+   3. `.env.testing adatbázis beállítások megadása` 
+
+  ## Telepítés
+  1. `composer install`
+  2. `npm install`
+  3. `npm run dev`
+  4. `php artisan migrate` 
+  5. `php artisan migrate --env=testing`  
 
  ## Feature tesztek futtatása
-  - php artisan test
+`php artisan test`
 
  ## API dokumentáció
   -  /docs/api
