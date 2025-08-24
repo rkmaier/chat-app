@@ -1,6 +1,6 @@
 <?php
 
-namespace Message;
+namespace Tests\Feature\Message;
 
 use App\Models\Friend;
 use App\Models\User;

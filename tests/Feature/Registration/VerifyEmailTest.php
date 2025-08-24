@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Registration;
+namespace Tests\Feature\Registration;
 
 use App\Models\User;
 use Carbon\Carbon;

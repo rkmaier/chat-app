@@ -1,6 +1,6 @@
 <?php
 
-namespace Friend;
+namespace Tests\Feature\Friend;
 
 use App\Models\Friend;
 use App\Models\User;

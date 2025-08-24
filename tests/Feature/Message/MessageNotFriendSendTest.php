@@ -1,6 +1,6 @@
 <?php
 
-namespace Message;
+namespace Tests\Feature\Message;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
