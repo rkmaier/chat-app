@@ -15,8 +15,9 @@
   1. `composer install`
   2. `npm install`
   3. `npm run dev`
-  4. `php artisan migrate` 
-  5. `php artisan migrate --env=testing`  
+  4. `php artisan key:generate && php artisan key:generate --env=testing`  
+  5. `php artisan migrate` 
+  6. `php artisan migrate --env=testing`  
 
  ## Feature tesztek futtatása
 `php artisan test`
