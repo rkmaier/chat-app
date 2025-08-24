@@ -13,11 +13,11 @@ class RegisterController extends Controller
     {
 
         if (!$registerNewUser(request: $request)) {
-            return response()->json(['message' => 'Registration failed.'], 422);
+            return response()->json(['message' =>  __('Registration failed.')], 422);
         }
 
         return response()->json([
-            'message' => 'Registered. Please check your email for verification link.'
+            'message' =>  __('Registered. Please check your email for verification link.')
         ], 201);
     }
 }

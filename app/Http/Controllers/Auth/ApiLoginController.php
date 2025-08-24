@@ -13,13 +13,13 @@ class ApiLoginController extends Controller
     public function login(LoginRequest $request, AuthenticateUser $authenticateUser, UserEmailNotVerified $userEmailNotVerified): JsonResponse
     {
         if ($authenticateUser($request)) {
-            return response()->json(['message' => 'Invalid credentials'], 422);
+            return response()->json(['message' => __('Invalid credentials')], 422);
         }
 
         $user = $request->user();
 
         if (!$userEmailNotVerified) {
-            return response()->json(['message' => 'Email not verified'], 403);
+            return response()->json(['message' => __('Email not verified')], 403);
         }
 
         return response()->json([
