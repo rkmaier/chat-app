@@ -1,6 +1,6 @@
    
 
- ## Követelmények
+  ## Követelmények
  - PHP >= 8.3
  - MySQL/MariaDB
  - Composer
@@ -16,12 +16,11 @@
   2. `npm install`
   3. `npm run dev`
   4. `php artisan key:generate && php artisan key:generate --env=testing`  
-  5. `php artisan migrate` 
-  6. `php artisan migrate --env=testing`  
+  5. `php artisan migrate && php artisan migrate --env=testing`
 
- ## Feature tesztek futtatása
-`php artisan test`
+  ## Feature tesztek futtatása
+     `php artisan test`
 
- ## API dokumentáció
-  -  /docs/api
+  ## API dokumentáció
+  - /docs/api
   
