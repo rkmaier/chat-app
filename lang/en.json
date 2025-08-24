@@ -1,0 +1,19 @@
+{
+    "Invalid credentials": "Invalid credentials",
+    "Email not verified": "Email not verified",
+    "Registration failed.": "Registration failed.",
+    "Registered. Please check your email for verification link.": "Registered. Please check your email for verification link.",
+    "Email verified.": "Email verified.",
+    "Email already verified.": "Email already verified.",
+    "User is not verified.": "User is not verified.",
+    "Cannot friend yourself.": "Cannot friend yourself.",
+    "Friend is blocked.": "Friend is blocked.",
+    "Friend request accepted.": "Friend request accepted.",
+    "Friend request already sent.": "Friend request already sent.",
+    "Friend request sent.": "Friend request sent.",
+    "Invalid operation.": "Invalid operation.",
+    "Friend not found.": "Friend not found.",
+    "You cannot accept your own request.": "You cannot accept your own request.",
+    "Cannot message yourself.": "Cannot message yourself.",
+    "Users are not friends.": "Users are not friends."
+}
