@@ -4,7 +4,6 @@ namespace Login;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use PHPUnit\Framework\Attributes\Depends;
 use Tests\TestCase;
 
 class LoginTest extends TestCase

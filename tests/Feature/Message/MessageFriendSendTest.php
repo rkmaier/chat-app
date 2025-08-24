@@ -14,7 +14,6 @@ class MessageFriendSendTest extends TestCase
 
     public function test_user_message_not_friends(): void
     {
-        // Create two verified users
         $user = User::factory()->create(['email_verified_at' => now()]);
         $friend = User::factory()->create(['email_verified_at' => now()]);
 
@@ -47,6 +46,5 @@ class MessageFriendSendTest extends TestCase
             'receiver_id' => $friend->id,
             'body' => 'Hello World!',
         ]);
-
     }
 }

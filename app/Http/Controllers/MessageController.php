@@ -20,13 +20,13 @@ class MessageController extends Controller
         $sender = $request->user();
 
         if (!($sender->id !== $recipient->id)) {
-            return response()->json(['message' => 'Cannot message yourself.'], 422);
+            return response()->json(['message' => __('Cannot message yourself.')], 422);
         }
 
         $friend = Friend::between($sender->id, $recipient->id)->first();
 
         if (!($friend && $friend->status === Friend::STATUS_ACCEPT)) {
-            return response()->json(['message' => 'Users are not friends.'], 403);
+            return response()->json(['message' => __('Users are not friends.')], 403);
         }
 
         $message = $createMessage(sender: $sender, recipient: $recipient, request: $request);
@@ -42,7 +42,7 @@ class MessageController extends Controller
         $friend = $friendRequest($auth->id, $withUser->id);
 
         if (!($friend && $friend->status === Friend::STATUS_ACCEPT)) {
-            return response()->json(['message' => 'Users are not friends.'], 403);
+            return response()->json(['message' => __('Users are not friends.')], 403);
         }
 
         $messages = $searchMessages(request: $request, withUser: $withUser);

@@ -26,29 +26,29 @@ class FriendController extends Controller
         $auth = $request->user();
 
         if ($emailNotVerified($user)) {
-            return response()->json(['message' => 'User is not verified.'], 422);
+            return response()->json(['message' => __('User is not verified.')], 422);
         }
 
         if (!($auth->id !== $user->id)) {
-            return response()->json(['message' => 'Cannot friend yourself.'], 422);
+            return response()->json(['message' => __('Cannot friend yourself.')], 422);
         }
 
         $friend = $getFriend(user_id: $auth->id, friend_id: $user->id);
 
         if ($friend->exists && $friend->status === Friend::STATUS_BLOCKED) {
-            return response()->json(['message' => 'Friend is blocked.'], 403);
+            return response()->json(['message' => __('Friend is blocked.')], 403);
         }
 
         if ($friend->exists && $friend->status === Friend::STATUS_PENDING) {
             if ($friend->requested_by !== $auth->id) {
                 $updateFriendStatus($friend, Friend::STATUS_ACCEPT);
-                return response()->json(['message' => 'Friend request accepted.']);
+                return response()->json(['message' => __('Friend request accepted.')]);
             }
-            return response()->json(['message' => 'Friend request already sent.']);
+            return response()->json(['message' => __('Friend request already sent.')]);
         }
 
         $updateFriendStatus($friend, Friend::STATUS_PENDING, $auth->id);
-        return response()->json(['message' => 'Friend request sent.']);
+        return response()->json(['message' => __('Friend request sent.')]);
     }
 
 
@@ -57,21 +57,21 @@ class FriendController extends Controller
         $auth = $request->user();
 
         if (!($auth->id !== $user->id)) {
-            return response()->json(['message' => 'Invalid operation.'], 422);
+            return response()->json(['message' => __('Invalid operation.')], 422);
         }
 
         $friend = $friendRequest(user_id: $auth->id, friend_id: $user->id);
 
         if (!$friend) {
-            return response()->json(['message' => 'Friend not found.'], 404);
+            return response()->json(['message' => __('Friend not found.')], 404);
         }
 
         if (!($friend->requested_by !== $auth->id)) {
-            return response()->json(['message' => 'You cannot accept your own request.'], 403);
+            return response()->json(['message' => __('You cannot accept your own request.')], 403);
         }
 
         $updateFriendStatus(friend: $friend, status: Friend::STATUS_ACCEPT);
 
-        return response()->json(['message' => 'Friend request accepted.']);
+        return response()->json(['message' => __('Friend request accepted.')]);
     }
 }

@@ -29,6 +29,6 @@ class FriendsTest extends TestCase
             'status' => Friend::STATUS_ACCEPT,
         ]);
 
-        $response->assertJson(['message' => 'Friend request accepted.']);
+        $response->assertJson(['message' => __('Friend request accepted.')]);
     }
 }

@@ -28,7 +28,7 @@ class VerifyEmailTest extends TestCase
 
         $response = $this->actingAs($user)->get($verificationUrl);
 
-        $response->assertJson(['message' => 'Email already verified.']);
+        $response->assertJson(['message' => __('Email already verified.')]);
 
         $this->assertTrue($user->fresh()->hasVerifiedEmail());
     }

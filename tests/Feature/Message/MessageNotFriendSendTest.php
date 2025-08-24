@@ -4,7 +4,6 @@ namespace Message;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use PHPUnit\Framework\Attributes\Depends;
 use Tests\TestCase;
 
 class MessageNotFriendSendTest extends TestCase
@@ -20,7 +19,7 @@ class MessageNotFriendSendTest extends TestCase
             'body' => 'Hello, world!',
         ]);
 
-        $response->assertJson(['message' =>'Users are not friends.']);
+        $response->assertJson(['message' => __('Users are not friends.')]);
         $response->assertStatus(403);
     }
 }
